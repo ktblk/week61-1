@@ -1,0 +1,28 @@
+<div class="container">
+  <% @users.each do |user| %>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="media background-1 font-white" >
+          <a class="media-left media-middle" href="#">
+            <img class="media-object img" width="100px" height="100px" src="<%=user.picture%>" alt="Generic placeholder image">
+          </a>
+          <div class="media-body media-middle">
+            <h4 class="media-heading lead"><%= user.name%></h4>
+            <%= user.bio %>
+          </div>
+        </div>
+        <div class="card-block">
+          <div class="col-xs-4">
+            <%= user.comments.count %>
+            <p>Comments</p>
+          </div>
+          <div class="col-xs-4">
+            <%= user.followers.count %>
+            <p>Followers</p>
+          </div>
+          <a href="#" class="btn btn-primary pull-xs-right">Follow</a>
+        </div>
+      </div>
+    </div>
+  <%end%>
+</div>
